@@ -34,8 +34,10 @@ I have created a REST API that is consuming the public Frankfurter API
 2. Open the Project in Visual Studio:
       1. Open Visual Studio 2022.
       2. Select Open a project or solution.
-      2. Navigate to the cloned project folder and select the .sln file.
-3.Restore Dependencies:
+      3. Navigate to the cloned project folder and select the .sln file.
+3. Restore Dependencies:
          Visual Studio should automatically restore all NuGet packages, but if it doesn't, right-click on the solution and select Restore NuGet Packages.
-4. Run the Application:
+4. Build the code
+         Use CTRL+SHIFT+B to build the solution.
+6. Run the Application:
          Press F5 or click on the Run button to start the API.(https mode)
