@@ -21,12 +21,12 @@ I have created a REST API that is consuming the public Frankfurter API
  ### Enhancements
  1. The end points can be modified to get latest and historical rates for any given currency.
  2. Adding logging at key points
- 3. Implementing monitoring and alerts to observe the behaviour and performance of API. For example, we can monitot the 
-    number of requests and the average time take to respond to optimize the performance of API.
+ 3. Implementing monitoring and alerts to observe the behaviour and performance of API. For example, we can monitor the 
+    number of requests and the average time taken to respond to optimize the performance of API.
  4. Implementing caching. We can cache the results from Frankfurter API to reduce the number of requests made to that API.
- 5. Rate Limiter - Currently we are limiting have set the permit limit of requests to downstream API as 50. We can use the 
-    monitored metrics to update this limit. Can also useload balancing techniques.
- 6. Circuit Breaker - We can add circuit break strategy in case downstream API is not working so that a bcaklog of requests 
+ 5. Rate Limiter - Currently we have set the permit limit of requests to downstream API as 50. We can use the 
+    monitored metrics to update this limit. Can also use load balancing techniques.
+ 6. Circuit Breaker - We can add circuit break strategy in case downstream API is not working so that a backlog of requests 
     is not created.
     
 ### Running the application
