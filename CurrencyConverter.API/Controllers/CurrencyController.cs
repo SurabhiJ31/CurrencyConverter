@@ -3,6 +3,7 @@ using CurrencyConverter.API.Extensions;
 using CurrencyConverter.API.Frankfurter;
 using CurrencyConverter.API.Models.Validations;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace CurrencyConverter.API.Controllers
 {
@@ -18,18 +19,20 @@ namespace CurrencyConverter.API.Controllers
         }
 
         [HttpGet("latest-rates")]
-        public async Task<IActionResult> GetLatestRates()
+        public async Task<IActionResult> GetLatestRates([FromQuery] [Required] string currency)
         {
             var response = await _baseApiClient.GetLatestExchangeRatesAsync();
             if(response!=null)
             {
-                return Ok(response.ToLatestExchangeRates());
+                var a = response.ToLatestExchangeRates();
+                return Ok(a);
             }
+
+            //should have send NotFound();
             return NoContent();
         }
 
         [HttpGet("convert")]
-        [ValidateModel]
         public async Task<IActionResult> ConvertCurrency([FromQuery] ConvertCurrencyQueryParameters queryParameters)
         {
             var response = await _baseApiClient.ConvertAmountAsync(queryParameters.FromCurrency, queryParameters.Amount, queryParameters.ToCurrency);
